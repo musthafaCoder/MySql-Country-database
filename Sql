@@ -1,0 +1,314 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.0.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Feb 03, 2020 at 02:27 PM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.3.9
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `acparts_wb`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `countries`
+--
+
+CREATE TABLE `countries` (
+  `id_countries` int(3) UNSIGNED NOT NULL,
+  `name` varchar(200) DEFAULT NULL,
+  `iso_alpha2` varchar(2) DEFAULT NULL,
+  `iso_alpha3` varchar(3) DEFAULT NULL,
+  `iso_numeric` int(11) DEFAULT NULL,
+  `currency_code` char(3) DEFAULT NULL,
+  `currency_name` varchar(32) DEFAULT NULL,
+  `currrency_symbol` varchar(3) DEFAULT NULL,
+  `phone_code` varchar(6) DEFAULT NULL,
+  `flag` varchar(6) DEFAULT NULL,
+  `language` varchar(31) NOT NULL DEFAULT 'en',
+  `zoneID` int(11) NOT NULL DEFAULT 1
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `countries`
+--
+
+INSERT INTO `countries` (`id_countries`, `name`, `iso_alpha2`, `iso_alpha3`, `iso_numeric`, `currency_code`, `currency_name`, `currrency_symbol`, `phone_code`, `flag`, `language`, `zoneID`) VALUES
+(1, 'Afghanistan', 'AF', 'AFG', 4, 'AFN', 'Afghani', '؋', '93', 'AF.png', 'en', 1),
+(2, 'Albania', 'AL', 'ALB', 8, 'ALL', 'Lek', 'Lek', '355', 'AL.png', 'en', 1),
+(3, 'Algeria', 'DZ', 'DZA', 12, 'DZD', 'Dinar', NULL, '213', 'DZ.png', 'en', 1),
+(4, 'American Samoa', 'AS', 'ASM', 16, 'USD', 'Dollar', '$', '1684', 'AS.png', 'en', 1),
+(5, 'Andorra', 'AD', 'AND', 20, 'EUR', 'Euro', '€', '376', 'AD.png', 'en', 1),
+(6, 'Angola', 'AO', 'AGO', 24, 'AOA', 'Kwanza', 'Kz', '244', 'AO.png', 'en', 1),
+(7, 'Anguilla', 'AI', 'AIA', 660, 'XCD', 'Dollar', '$', '1264', 'AI.png', 'en', 1),
+(8, 'Antarctica', 'AQ', 'ATA', 10, '', '', NULL, '0', 'AQ.png', 'en', 1),
+(9, 'Antigua and Barbuda', 'AG', 'ATG', 28, 'XCD', 'Dollar', '$', '1268', 'AG.png', 'en', 1),
+(10, 'Argentina', 'AR', 'ARG', 32, 'ARS', 'Peso', '$', '54', 'AR.png', 'en', 1),
+(11, 'Armenia', 'AM', 'ARM', 51, 'AMD', 'Dram', NULL, '374', 'AM.png', 'en', 1),
+(12, 'Aruba', 'AW', 'ABW', 533, 'AWG', 'Guilder', 'ƒ', '297', 'AW.png', 'en', 1),
+(13, 'Australia', 'AU', 'AUS', 36, 'AUD', 'Dollar', '$', '61', 'AU.png', 'en', 1),
+(14, 'Austria', 'AT', 'AUT', 40, 'EUR', 'Euro', '€', '43', 'AT.png', 'en', 1),
+(15, 'Azerbaijan', 'AZ', 'AZE', 31, 'AZN', 'Manat', 'ман', '994', 'AZ.png', 'en', 1),
+(16, 'Bahamas', 'BS', 'BHS', 44, 'BSD', 'Dollar', '$', '1242', 'BS.png', 'en', 1),
+(17, 'Bahrain', 'BH', 'BHR', 48, 'BHD', 'Dinar', NULL, '973', 'BH.png', 'en', 1),
+(18, 'Bangladesh', 'BD', 'BGD', 50, 'BDT', 'Taka', NULL, '880', 'BD.png', 'en', 1),
+(19, 'Barbados', 'BB', 'BRB', 52, 'BBD', 'Dollar', '$', '1246', 'BB.png', 'en', 1),
+(20, 'Belarus', 'BY', 'BLR', 112, 'BYR', 'Ruble', 'p.', '375', 'BY.png', 'en', 1),
+(21, 'Belgium', 'BE', 'BEL', 56, 'EUR', 'Euro', '€', '32', 'BE.png', 'en', 1),
+(22, 'Belize', 'BZ', 'BLZ', 84, 'BZD', 'Dollar', 'BZ$', '501', 'BZ.png', 'en', 1),
+(23, 'Benin', 'BJ', 'BEN', 204, 'XOF', 'Franc', NULL, '229', 'BJ.png', 'en', 1),
+(24, 'Bermuda', 'BM', 'BMU', 60, 'BMD', 'Dollar', '$', '1441', 'BM.png', 'en', 1),
+(25, 'Bhutan', 'BT', 'BTN', 64, 'BTN', 'Ngultrum', NULL, '975', 'BT.png', 'en', 1),
+(26, 'Bolivia', 'BO', 'BOL', 68, 'BOB', 'Boliviano', '$b', '591', 'BO.png', 'en', 1),
+(27, 'Bosnia and Herzegovina', 'BA', 'BIH', 70, 'BAM', 'Marka', 'KM', '387', 'BA.png', 'en', 1),
+(28, 'Botswana', 'BW', 'BWA', 72, 'BWP', 'Pula', 'P', '267', 'BW.png', 'en', 1),
+(29, 'Bouvet Island', 'BV', 'BVT', 74, 'NOK', 'Krone', 'kr', '0', 'BV.png', 'en', 1),
+(30, 'Brazil', 'BR', 'BRA', 76, 'BRL', 'Real', 'R$', '55', 'BR.png', 'en', 1),
+(31, 'British Indian Ocean Territory', 'IO', 'IOT', 86, 'USD', 'Dollar', '$', '246', 'IO.png', 'en', 1),
+(32, 'British Virgin Islands', 'VG', 'VGB', 92, 'USD', 'Dollar', '$', '1284', 'VG.png', 'en', 1),
+(33, 'Brunei', 'BN', 'BRN', 96, 'BND', 'Dollar', '$', '673', 'BN.png', 'en', 1),
+(34, 'Bulgaria', 'BG', 'BGR', 100, 'BGN', 'Lev', 'лв', '359', 'BG.png', 'en', 1),
+(35, 'Burkina Faso', 'BF', 'BFA', 854, 'XOF', 'Franc', NULL, '226', 'BF.png', 'en', 1),
+(36, 'Burundi', 'BI', 'BDI', 108, 'BIF', 'Franc', NULL, '257', 'BI.png', 'en', 1),
+(37, 'Cambodia', 'KH', 'KHM', 116, 'KHR', 'Riels', '៛', '855', 'KH.png', 'en', 1),
+(38, 'Cameroon', 'CM', 'CMR', 120, 'XAF', 'Franc', 'FCF', '237', 'CM.png', 'en', 1),
+(39, 'Canada', 'CA', 'CAN', 124, 'CAD', 'Dollar', '$', '1', 'CA.png', 'en', 1),
+(40, 'Cape Verde', 'CV', 'CPV', 132, 'CVE', 'Escudo', NULL, '238', 'CV.png', 'en', 1),
+(41, 'Cayman Islands', 'KY', 'CYM', 136, 'KYD', 'Dollar', '$', '1345', 'KY.png', 'en', 1),
+(42, 'Central African Republic', 'CF', 'CAF', 140, 'XAF', 'Franc', 'FCF', '236', 'CF.png', 'en', 1),
+(43, 'Chad', 'TD', 'TCD', 148, 'XAF', 'Franc', NULL, '235', 'TD.png', 'en', 1),
+(44, 'Chile', 'CL', 'CHL', 152, 'CLP', 'Peso', NULL, '56', 'CL.png', 'en', 1),
+(45, 'China', 'CN', 'CHN', 156, 'CNY', 'Yuan Renminbi', '¥', '86', 'CN.png', 'en', 1),
+(46, 'Christmas Island', 'CX', 'CXR', 162, 'AUD', 'Dollar', '$', '61', 'CX.png', 'en', 1),
+(47, 'Cocos Islands', 'CC', 'CCK', 166, 'AUD', 'Dollar', '$', '672', 'CC.png', 'en', 1),
+(48, 'Colombia', 'CO', 'COL', 170, 'COP', 'Peso', '$', '57', 'CO.png', 'en', 1),
+(49, 'Comoros', 'KM', 'COM', 174, 'KMF', 'Franc', NULL, '269', 'KM.png', 'en', 1),
+(50, 'Cook Islands', 'CK', 'COK', 184, 'NZD', 'Dollar', '$', '682', 'CK.png', 'en', 1),
+(51, 'Costa Rica', 'CR', 'CRI', 188, 'CRC', 'Colon', '₡', '506', 'CR.png', 'en', 1),
+(52, 'Croatia', 'HR', 'HRV', 191, 'HRK', 'Kuna', 'kn', '385', 'HR.png', 'en', 1),
+(53, 'Cuba', 'CU', 'CUB', 192, 'CUP', 'Peso', '₱', '53', 'CU.png', 'en', 1),
+(54, 'Cyprus', 'CY', 'CYP', 196, 'CYP', 'Pound', NULL, '357', 'CY.png', 'en', 1),
+(55, 'Czech Republic', 'CZ', 'CZE', 203, 'CZK', 'Koruna', 'Kč', '420', 'CZ.png', 'en', 1),
+(56, 'Democratic Republic of the Congo', 'CD', 'COD', 180, 'CDF', 'Franc', NULL, '242', 'CD.png', 'en', 1),
+(57, 'Denmark', 'DK', 'DNK', 208, 'DKK', 'Krone', 'kr', '45', 'DK.png', 'en', 1),
+(58, 'Djibouti', 'DJ', 'DJI', 262, 'DJF', 'Franc', NULL, '253', 'DJ.png', 'en', 1),
+(59, 'Dominica', 'DM', 'DMA', 212, 'XCD', 'Dollar', '$', '1767', 'DM.png', 'en', 1),
+(60, 'Dominican Republic', 'DO', 'DOM', 214, 'DOP', 'Peso', 'RD$', '1809', 'DO.png', 'en', 1),
+(61, 'East Timor', 'TL', 'TLS', 626, 'USD', 'Dollar', '$', '670', 'TL.png', 'en', 1),
+(62, 'Ecuador', 'EC', 'ECU', 218, 'USD', 'Dollar', '$', '593', 'EC.png', 'en', 1),
+(63, 'Egypt', 'EG', 'EGY', 818, 'EGP', 'Pound', '£', '20', 'EG.png', 'en', 1),
+(64, 'El Salvador', 'SV', 'SLV', 222, 'SVC', 'Colone', '$', '503', 'SV.png', 'en', 1),
+(65, 'Equatorial Guinea', 'GQ', 'GNQ', 226, 'XAF', 'Franc', 'FCF', '240', 'GQ.png', 'en', 1),
+(66, 'Eritrea', 'ER', 'ERI', 232, 'ERN', 'Nakfa', 'Nfk', '291', 'ER.png', 'en', 1),
+(67, 'Estonia', 'EE', 'EST', 233, 'EEK', 'Kroon', 'kr', '372', 'EE.png', 'en', 1),
+(68, 'Ethiopia', 'ET', 'ETH', 231, 'ETB', 'Birr', NULL, '251', 'ET.png', 'en', 1),
+(69, 'Falkland Islands', 'FK', 'FLK', 238, 'FKP', 'Pound', '£', '500', 'FK.png', 'en', 1),
+(70, 'Faroe Islands', 'FO', 'FRO', 234, 'DKK', 'Krone', 'kr', '298', 'FO.png', 'en', 1),
+(71, 'Fiji', 'FJ', 'FJI', 242, 'FJD', 'Dollar', '$', '679', 'FJ.png', 'en', 1),
+(72, 'Finland', 'FI', 'FIN', 246, 'EUR', 'Euro', '€', '358', 'FI.png', 'en', 1),
+(73, 'France', 'FR', 'FRA', 250, 'EUR', 'Euro', '€', '33', 'FR.png', 'en', 1),
+(74, 'French Guiana', 'GF', 'GUF', 254, 'EUR', 'Euro', '€', '594', 'GF.png', 'en', 1),
+(75, 'French Polynesia', 'PF', 'PYF', 258, 'XPF', 'Franc', NULL, '689', 'PF.png', 'en', 1),
+(76, 'French Southern Territories', 'TF', 'ATF', 260, 'EUR', 'Euro  ', '€', '0', 'TF.png', 'en', 1),
+(77, 'Gabon', 'GA', 'GAB', 266, 'XAF', 'Franc', 'FCF', '241', 'GA.png', 'en', 1),
+(78, 'Gambia', 'GM', 'GMB', 270, 'GMD', 'Dalasi', 'D', '220', 'GM.png', 'en', 1),
+(79, 'Georgia', 'GE', 'GEO', 268, 'GEL', 'Lari', NULL, '995', 'GE.png', 'en', 1),
+(80, 'Germany', 'DE', 'DEU', 276, 'EUR', 'Euro', '€', '49', 'DE.png', 'en', 1),
+(81, 'Ghana', 'GH', 'GHA', 288, 'GHC', 'Cedi', '¢', '233', 'GH.png', 'en', 1),
+(82, 'Gibraltar', 'GI', 'GIB', 292, 'GIP', 'Pound', '£', '350', 'GI.png', 'en', 1),
+(83, 'Greece', 'GR', 'GRC', 300, 'EUR', 'Euro', '€', '30', 'GR.png', 'en', 1),
+(84, 'Greenland', 'GL', 'GRL', 304, 'DKK', 'Krone', 'kr', '299', 'GL.png', 'en', 1),
+(85, 'Grenada', 'GD', 'GRD', 308, 'XCD', 'Dollar', '$', '1473', 'GD.png', 'en', 1),
+(86, 'Guadeloupe', 'GP', 'GLP', 312, 'EUR', 'Euro', '€', '590', 'GP.png', 'en', 1),
+(87, 'Guam', 'GU', 'GUM', 316, 'USD', 'Dollar', '$', '1671', 'GU.png', 'en', 1),
+(88, 'Guatemala', 'GT', 'GTM', 320, 'GTQ', 'Quetzal', 'Q', '502', 'GT.png', 'en', 1),
+(89, 'Guinea', 'GN', 'GIN', 324, 'GNF', 'Franc', NULL, '224', 'GN.png', 'en', 1),
+(90, 'Guinea-Bissau', 'GW', 'GNB', 624, 'XOF', 'Franc', NULL, '245', 'GW.png', 'en', 1),
+(91, 'Guyana', 'GY', 'GUY', 328, 'GYD', 'Dollar', '$', '592', 'GY.png', 'en', 1),
+(92, 'Haiti', 'HT', 'HTI', 332, 'HTG', 'Gourde', 'G', '509', 'HT.png', 'en', 1),
+(93, 'Heard Island and McDonald Islands', 'HM', 'HMD', 334, 'AUD', 'Dollar', '$', '0', 'HM.png', 'en', 1),
+(94, 'Honduras', 'HN', 'HND', 340, 'HNL', 'Lempira', 'L', '504', 'HN.png', 'en', 1),
+(95, 'Hong Kong', 'HK', 'HKG', 344, 'HKD', 'Dollar', '$', '852', 'HK.png', 'en', 1),
+(96, 'Hungary', 'HU', 'HUN', 348, 'HUF', 'Forint', 'Ft', '36', 'HU.png', 'en', 1),
+(97, 'Iceland', 'IS', 'ISL', 352, 'ISK', 'Krona', 'kr', '354', 'IS.png', 'en', 1),
+(98, 'India', 'IN', 'IND', 356, 'INR', 'Rupee', '₹', '91', 'IN.png', 'en', 1),
+(99, 'Indonesia', 'ID', 'IDN', 360, 'IDR', 'Rupiah', 'Rp', '62', 'ID.png', 'en', 1),
+(100, 'Iran', 'IR', 'IRN', 364, 'IRR', 'Rial', '﷼', '98', 'IR.png', 'en', 1),
+(101, 'Iraq', 'IQ', 'IRQ', 368, 'IQD', 'Dinar', NULL, '964', 'IQ.png', 'en', 1),
+(102, 'Ireland', 'IE', 'IRL', 372, 'EUR', 'Euro', '€', '353', 'IE.png', 'en', 1),
+(103, 'Israel', 'IL', 'ISR', 376, 'ILS', 'Shekel', '₪', '972', 'IL.png', 'en', 1),
+(104, 'Italy', 'IT', 'ITA', 380, 'EUR', 'Euro', '€', '39', 'IT.png', 'en', 1),
+(105, 'Ivory Coast', 'CI', 'CIV', 384, 'XOF', 'Franc', NULL, '225', 'CI.png', 'en', 1),
+(106, 'Jamaica', 'JM', 'JAM', 388, 'JMD', 'Dollar', '$', '1876', 'JM.png', 'en', 1),
+(107, 'Japan', 'JP', 'JPN', 392, 'JPY', 'Yen', '¥', '81', 'JP.png', 'en', 1),
+(108, 'Jordan', 'JO', 'JOR', 400, 'JOD', 'Dinar', NULL, '962', 'JO.png', 'en', 1),
+(109, 'Kazakhstan', 'KZ', 'KAZ', 398, 'KZT', 'Tenge', 'лв', '7', 'KZ.png', 'en', 1),
+(110, 'Kenya', 'KE', 'KEN', 404, 'KES', 'Shilling', NULL, '254', 'KE.png', 'en', 1),
+(111, 'Kiribati', 'KI', 'KIR', 296, 'AUD', 'Dollar', '$', '686', 'KI.png', 'en', 1),
+(112, 'Kuwait', 'KW', 'KWT', 414, 'KWD', 'Dinar', NULL, '965', 'KW.png', 'en', 1),
+(113, 'Kyrgyzstan', 'KG', 'KGZ', 417, 'KGS', 'Som', 'лв', '996', 'KG.png', 'en', 1),
+(114, 'Laos', 'LA', 'LAO', 418, 'LAK', 'Kip', '₭', '856', 'LA.png', 'en', 1),
+(115, 'Latvia', 'LV', 'LVA', 428, 'LVL', 'Lat', 'Ls', '371', 'LV.png', 'en', 1),
+(116, 'Lebanon', 'LB', 'LBN', 422, 'LBP', 'Pound', '£', '961', 'LB.png', 'en', 1),
+(117, 'Lesotho', 'LS', 'LSO', 426, 'LSL', 'Loti', 'L', '266', 'LS.png', 'en', 1),
+(118, 'Liberia', 'LR', 'LBR', 430, 'LRD', 'Dollar', '$', '231', 'LR.png', 'en', 1),
+(119, 'Libya', 'LY', 'LBY', 434, 'LYD', 'Dinar', NULL, '218', 'LY.png', 'en', 1),
+(120, 'Liechtenstein', 'LI', 'LIE', 438, 'CHF', 'Franc', 'CHF', '423', 'LI.png', 'en', 1),
+(121, 'Lithuania', 'LT', 'LTU', 440, 'LTL', 'Litas', 'Lt', '370', 'LT.png', 'en', 1),
+(122, 'Luxembourg', 'LU', 'LUX', 442, 'EUR', 'Euro', '€', '352', 'LU.png', 'en', 1),
+(123, 'Macao', 'MO', 'MAC', 446, 'MOP', 'Pataca', 'MOP', '853', 'MO.png', 'en', 1),
+(124, 'Macedonia', 'MK', 'MKD', 807, 'MKD', 'Denar', 'ден', '389', 'MK.png', 'en', 1),
+(125, 'Madagascar', 'MG', 'MDG', 450, 'MGA', 'Ariary', NULL, '261', 'MG.png', 'en', 1),
+(126, 'Malawi', 'MW', 'MWI', 454, 'MWK', 'Kwacha', 'MK', '265', 'MW.png', 'en', 1),
+(127, 'Malaysia', 'MY', 'MYS', 458, 'MYR', 'Ringgit', 'RM', '60', 'MY.png', 'en', 1),
+(128, 'Maldives', 'MV', 'MDV', 462, 'MVR', 'Rufiyaa', 'Rf', '960', 'MV.png', 'en', 1),
+(129, 'Mali', 'ML', 'MLI', 466, 'XOF', 'Franc', NULL, '223', 'ML.png', 'en', 1),
+(130, 'Malta', 'MT', 'MLT', 470, 'MTL', 'Lira', NULL, '356', 'MT.png', 'en', 1),
+(131, 'Marshall Islands', 'MH', 'MHL', 584, 'USD', 'Dollar', '$', '692', 'MH.png', 'en', 1),
+(132, 'Martinique', 'MQ', 'MTQ', 474, 'EUR', 'Euro', '€', '596', 'MQ.png', 'en', 1),
+(133, 'Mauritania', 'MR', 'MRT', 478, 'MRO', 'Ouguiya', 'UM', '222', 'MR.png', 'en', 1),
+(134, 'Mauritius', 'MU', 'MUS', 480, 'MUR', 'Rupee', '₨', '230', 'MU.png', 'en', 1),
+(135, 'Mayotte', 'YT', 'MYT', 175, 'EUR', 'Euro', '€', '269', 'YT.png', 'en', 1),
+(136, 'Mexico', 'MX', 'MEX', 484, 'MXN', 'Peso', '$', '52', 'MX.png', 'en', 1),
+(137, 'Micronesia', 'FM', 'FSM', 583, 'USD', 'Dollar', '$', '691', 'FM.png', 'en', 1),
+(138, 'Moldova', 'MD', 'MDA', 498, 'MDL', 'Leu', NULL, '373', 'MD.png', 'en', 1),
+(139, 'Monaco', 'MC', 'MCO', 492, 'EUR', 'Euro', '€', '377', 'MC.png', 'en', 1),
+(140, 'Mongolia', 'MN', 'MNG', 496, 'MNT', 'Tugrik', '₮', '976', 'MN.png', 'en', 1),
+(141, 'Montserrat', 'MS', 'MSR', 500, 'XCD', 'Dollar', '$', '1664', 'MS.png', 'en', 1),
+(142, 'Morocco', 'MA', 'MAR', 504, 'MAD', 'Dirham', NULL, '212', 'MA.png', 'en', 1),
+(143, 'Mozambique', 'MZ', 'MOZ', 508, 'MZN', 'Meticail', 'MT', '258', 'MZ.png', 'en', 1),
+(144, 'Myanmar', 'MM', 'MMR', 104, 'MMK', 'Kyat', 'K', '95', 'MM.png', 'en', 1),
+(145, 'Namibia', 'NA', 'NAM', 516, 'NAD', 'Dollar', '$', '264', 'NA.png', 'en', 1),
+(146, 'Nauru', 'NR', 'NRU', 520, 'AUD', 'Dollar', '$', '674', 'NR.png', 'en', 1),
+(147, 'Nepal', 'NP', 'NPL', 524, 'NPR', 'Rupee', '₨', '977', 'NP.png', 'en', 1),
+(148, 'Netherlands', 'NL', 'NLD', 528, 'EUR', 'Euro', '€', '31', 'NL.png', 'en', 1),
+(149, 'Netherlands Antilles', 'AN', 'ANT', 530, 'ANG', 'Guilder', 'ƒ', '599', 'AN.png', 'en', 1),
+(150, 'New Caledonia', 'NC', 'NCL', 540, 'XPF', 'Franc', NULL, '687', 'NC.png', 'en', 1),
+(151, 'New Zealand', 'NZ', 'NZL', 554, 'NZD', 'Dollar', '$', '64', 'NZ.png', 'en', 1),
+(152, 'Nicaragua', 'NI', 'NIC', 558, 'NIO', 'Cordoba', 'C$', '505', 'NI.png', 'en', 1),
+(153, 'Niger', 'NE', 'NER', 562, 'XOF', 'Franc', NULL, '227', 'NE.png', 'en', 1),
+(154, 'Nigeria', 'NG', 'NGA', 566, 'NGN', 'Naira', '₦', '234', 'NG.png', 'en', 1),
+(155, 'Niue', 'NU', 'NIU', 570, 'NZD', 'Dollar', '$', '683', 'NU.png', 'en', 1),
+(156, 'Norfolk Island', 'NF', 'NFK', 574, 'AUD', 'Dollar', '$', '672', 'NF.png', 'en', 1),
+(157, 'North Korea', 'KP', 'PRK', 408, 'KPW', 'Won', '₩', '850', 'KP.png', 'en', 1),
+(158, 'Northern Mariana Islands', 'MP', 'MNP', 580, 'USD', 'Dollar', '$', '1670', 'MP.png', 'en', 1),
+(159, 'Norway', 'NO', 'NOR', 578, 'NOK', 'Krone', 'kr', '47', 'NO.png', 'en', 1),
+(160, 'Oman', 'OM', 'OMN', 512, 'OMR', 'Rial', '﷼', '968', 'OM.png', 'en', 1),
+(161, 'Pakistan', 'PK', 'PAK', 586, 'PKR', 'Rupee', '₨', '92', 'PK.png', 'en', 1),
+(162, 'Palau', 'PW', 'PLW', 585, 'USD', 'Dollar', '$', '680', 'PW.png', 'en', 1),
+(163, 'Palestinian Territory', 'PS', 'PSE', 275, 'ILS', 'Shekel', '₪', '970', 'PS.png', 'en', 1),
+(164, 'Panama', 'PA', 'PAN', 591, 'PAB', 'Balboa', 'B/.', '507', 'PA.png', 'en', 1),
+(165, 'Papua New Guinea', 'PG', 'PNG', 598, 'PGK', 'Kina', NULL, '675', 'PG.png', 'en', 1),
+(166, 'Paraguay', 'PY', 'PRY', 600, 'PYG', 'Guarani', 'Gs', '595', 'PY.png', 'en', 1),
+(167, 'Peru', 'PE', 'PER', 604, 'PEN', 'Sol', 'S/.', '51', 'PE.png', 'en', 1),
+(168, 'Philippines', 'PH', 'PHL', 608, 'PHP', 'Peso', 'Php', '63', 'PH.png', 'en', 1),
+(169, 'Pitcairn', 'PN', 'PCN', 612, 'NZD', 'Dollar', '$', '0', 'PN.png', 'en', 1),
+(170, 'Poland', 'PL', 'POL', 616, 'PLN', 'Zloty', 'zł', '48', 'PL.png', 'en', 1),
+(171, 'Portugal', 'PT', 'PRT', 620, 'EUR', 'Euro', '€', '351', 'PT.png', 'en', 1),
+(172, 'Puerto Rico', 'PR', 'PRI', 630, 'USD', 'Dollar', '$', '1787', 'PR.png', 'en', 1),
+(173, 'Qatar', 'QA', 'QAT', 634, 'QAR', 'Rial', '﷼', '974', 'QA.png', 'en', 1),
+(174, 'Republic of the Congo', 'CG', 'COG', 178, 'XAF', 'Franc', 'FCF', '242', 'CG.png', 'en', 1),
+(175, 'Reunion', 'RE', 'REU', 638, 'EUR', 'Euro', '€', '262', 'RE.png', 'en', 1),
+(176, 'Romania', 'RO', 'ROU', 642, 'RON', 'Leu', 'lei', '40', 'RO.png', 'en', 1),
+(177, 'Russia', 'RU', 'RUS', 643, 'RUB', 'Ruble', 'руб', '70', 'RU.png', 'en', 1),
+(178, 'Rwanda', 'RW', 'RWA', 646, 'RWF', 'Franc', NULL, '250', 'RW.png', 'en', 1),
+(179, 'Saint Helena', 'SH', 'SHN', 654, 'SHP', 'Pound', '£', '290', 'SH.png', 'en', 1),
+(180, 'Saint Kitts and Nevis', 'KN', 'KNA', 659, 'XCD', 'Dollar', '$', '1869', 'KN.png', 'en', 1),
+(181, 'Saint Lucia', 'LC', 'LCA', 662, 'XCD', 'Dollar', '$', '1758', 'LC.png', 'en', 1),
+(182, 'Saint Pierre and Miquelon', 'PM', 'SPM', 666, 'EUR', 'Euro', '€', '508', 'PM.png', 'en', 1),
+(183, 'Saint Vincent and the Grenadines', 'VC', 'VCT', 670, 'XCD', 'Dollar', '$', '1784', 'VC.png', 'en', 1),
+(184, 'Samoa', 'WS', 'WSM', 882, 'WST', 'Tala', 'WS$', '684', 'WS.png', 'en', 1),
+(185, 'San Marino', 'SM', 'SMR', 674, 'EUR', 'Euro', '€', '378', 'SM.png', 'en', 1),
+(186, 'Sao Tome and Principe', 'ST', 'STP', 678, 'STD', 'Dobra', 'Db', '239', 'ST.png', 'en', 1),
+(187, 'Saudi Arabia', 'SA', 'SAU', 682, 'SAR', 'Rial', '﷼', '966', 'SA.png', 'en', 1),
+(188, 'Senegal', 'SN', 'SEN', 686, 'XOF', 'Franc', NULL, '221', 'SN.png', 'en', 1),
+(189, 'Serbia and Montenegro', 'CS', 'SCG', 891, 'RSD', 'Dinar', 'Дин', '381', 'CS.png', 'en', 1),
+(190, 'Seychelles', 'SC', 'SYC', 690, 'SCR', 'Rupee', '₨', '248', 'SC.png', 'en', 1),
+(191, 'Sierra Leone', 'SL', 'SLE', 694, 'SLL', 'Leone', 'Le', '232', 'SL.png', 'en', 1),
+(192, 'Singapore', 'SG', 'SGP', 702, 'SGD', 'Dollar', '$', '65', 'SG.png', 'en', 1),
+(193, 'Slovakia', 'SK', 'SVK', 703, 'SKK', 'Koruna', 'Sk', '421', 'SK.png', 'en', 1),
+(194, 'Slovenia', 'SI', 'SVN', 705, 'EUR', 'Euro', '€', '386', 'SI.png', 'en', 1),
+(195, 'Solomon Islands', 'SB', 'SLB', 90, 'SBD', 'Dollar', '$', '677', 'SB.png', 'en', 1),
+(196, 'Somalia', 'SO', 'SOM', 706, 'SOS', 'Shilling', 'S', '252', 'SO.png', 'en', 1),
+(197, 'South Africa', 'ZA', 'ZAF', 710, 'ZAR', 'Rand', 'R', '27', 'ZA.png', 'en', 1),
+(198, 'South Georgia and the South Sandwich Islands', 'GS', 'SGS', 239, 'GBP', 'Pound', '£', '0', 'GS.png', 'en', 1),
+(199, 'South Korea', 'KR', 'KOR', 410, 'KRW', 'Won', '₩', '82', 'KR.png', 'en', 1),
+(200, 'Spain', 'ES', 'ESP', 724, 'EUR', 'Euro', '€', '34', 'ES.png', 'en', 1),
+(201, 'Sri Lanka', 'LK', 'LKA', 144, 'LKR', 'Rupee', '₨', '94', 'LK.png', 'en', 1),
+(202, 'Sudan', 'SD', 'SDN', 736, 'SDD', 'Dinar', NULL, '249', 'SD.png', 'en', 1),
+(203, 'Suriname', 'SR', 'SUR', 740, 'SRD', 'Dollar', '$', '597', 'SR.png', 'en', 1),
+(204, 'Svalbard and Jan Mayen', 'SJ', 'SJM', 744, 'NOK', 'Krone', 'kr', '47', 'SJ.png', 'en', 1),
+(205, 'Swaziland', 'SZ', 'SWZ', 748, 'SZL', 'Lilangeni', NULL, '268', 'SZ.png', 'en', 1),
+(206, 'Sweden', 'SE', 'SWE', 752, 'SEK', 'Krona', 'kr', '46', 'SE.png', 'en', 1),
+(207, 'Switzerland', 'CH', 'CHE', 756, 'CHF', 'Franc', 'CHF', '41', 'CH.png', 'en', 1),
+(208, 'Syria', 'SY', 'SYR', 760, 'SYP', 'Pound', '£', '963', 'SY.png', 'en', 1),
+(209, 'Taiwan', 'TW', 'TWN', 158, 'TWD', 'Dollar', 'NT$', '886', 'TW.png', 'en', 1),
+(210, 'Tajikistan', 'TJ', 'TJK', 762, 'TJS', 'Somoni', NULL, '992', 'TJ.png', 'en', 1),
+(211, 'Tanzania', 'TZ', 'TZA', 834, 'TZS', 'Shilling', NULL, '255', 'TZ.png', 'en', 1),
+(212, 'Thailand', 'TH', 'THA', 764, 'THB', 'Baht', '฿', '66', 'TH.png', 'en', 1),
+(213, 'Togo', 'TG', 'TGO', 768, 'XOF', 'Franc', NULL, '228', 'TG.png', 'en', 1),
+(214, 'Tokelau', 'TK', 'TKL', 772, 'NZD', 'Dollar', '$', '690', 'TK.png', 'en', 1),
+(215, 'Tonga', 'TO', 'TON', 776, 'TOP', 'Pa\'anga', 'T$', '676', 'TO.png', 'en', 1),
+(216, 'Trinidad and Tobago', 'TT', 'TTO', 780, 'TTD', 'Dollar', 'TT$', '1868', 'TT.png', 'en', 1),
+(217, 'Tunisia', 'TN', 'TUN', 788, 'TND', 'Dinar', NULL, '216', 'TN.png', 'en', 1),
+(218, 'Turkey', 'TR', 'TUR', 792, 'TRY', 'Lira', 'YTL', '90', 'TR.png', 'en', 1),
+(219, 'Turkmenistan', 'TM', 'TKM', 795, 'TMM', 'Manat', 'm', '7370', 'TM.png', 'en', 1),
+(220, 'Turks and Caicos Islands', 'TC', 'TCA', 796, 'USD', 'Dollar', '$', '1649', 'TC.png', 'en', 1),
+(221, 'Tuvalu', 'TV', 'TUV', 798, 'AUD', 'Dollar', '$', '688', 'TV.png', 'en', 1),
+(222, 'U.S. Virgin Islands', 'VI', 'VIR', 850, 'USD', 'Dollar', '$', '1340', 'VI.png', 'en', 1),
+(223, 'Uganda', 'UG', 'UGA', 800, 'UGX', 'Shilling', NULL, '256', 'UG.png', 'en', 1),
+(224, 'Ukraine', 'UA', 'UKR', 804, 'UAH', 'Hryvnia', '₴', '380', 'UA.png', 'en', 1),
+(225, 'United Arab Emirates', 'AE', 'ARE', 784, 'AED', 'Dirham', NULL, '971', 'AE.png', 'en,ar', 1),
+(226, 'United Kingdom', 'GB', 'GBR', 826, 'GBP', 'Pound', '£', '44', 'GB.png', 'en', 1),
+(227, 'United States', 'US', 'USA', 840, 'USD', 'Dollar', '$', '1', 'US.png', 'en', 1),
+(228, 'United States Minor Outlying Islands', 'UM', 'UMI', 581, 'USD', 'Dollar ', '$', '1', 'UM.png', 'en', 1),
+(229, 'Uruguay', 'UY', 'URY', 858, 'UYU', 'Peso', '$U', '598', 'UY.png', 'en', 1),
+(230, 'Uzbekistan', 'UZ', 'UZB', 860, 'UZS', 'Som', 'лв', '998', 'UZ.png', 'en', 1),
+(231, 'Vanuatu', 'VU', 'VUT', 548, 'VUV', 'Vatu', 'Vt', '678', 'VU.png', 'en', 1),
+(232, 'Vatican', 'VA', 'VAT', 336, 'EUR', 'Euro', '€', '39', 'VA.png', 'en', 1),
+(233, 'Venezuela', 'VE', 'VEN', 862, 'VEF', 'Bolivar', 'Bs', '58', 'VE.png', 'en', 1),
+(234, 'Vietnam', 'VN', 'VNM', 704, 'VND', 'Dong', '₫', '84', 'VN.png', 'en', 1),
+(235, 'Wallis and Futuna', 'WF', 'WLF', 876, 'XPF', 'Franc', NULL, '681', 'WF.png', 'en', 1),
+(236, 'Western Sahara', 'EH', 'ESH', 732, 'MAD', 'Dirham', NULL, '212', 'EH.png', 'en', 1),
+(237, 'Yemen', 'YE', 'YEM', 887, 'YER', 'Rial', '﷼', '967', 'YE.png', 'en', 1),
+(238, 'Zambia', 'ZM', 'ZMB', 894, 'ZMK', 'Kwacha', 'ZK', '260', 'ZM.png', 'en', 1),
+(239, 'Zimbabwe', 'ZW', 'ZWE', 716, 'ZWD', 'Dollar', 'Z$', '263', 'ZW.png', 'en', 1);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `countries`
+--
+ALTER TABLE `countries`
+  ADD PRIMARY KEY (`id_countries`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `countries`
+--
+ALTER TABLE `countries`
+  MODIFY `id_countries` int(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=240;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
